@@ -1,0 +1,11 @@
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\NLog.config
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\Solutia.Logging.Nlog.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\Solutia.Logging.Nlog.pdb
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\Logging.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\NLog.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\Logging.pdb
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\bin\Debug\NLog.xml
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\obj\Debug\Solutia.Logging.Nlog.csprojResolveAssemblyReference.cache
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\obj\Debug\Solutia.Logging.Nlog.csproj.CoreCompileInputs.cache
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\obj\Debug\Solutia.Logging.Nlog.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Solutia.Logging.Nlog\obj\Debug\Solutia.Logging.Nlog.pdb
