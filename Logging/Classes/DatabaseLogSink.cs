@@ -13,10 +13,17 @@ namespace Logging.Classes
         public LogEntryComponent LogEntryComponent { get; set; }
     }
 
+    public enum CommandType
+    {
+        Table,
+        StoredProcedure
+    }
+
     public class DatabaseLogSink:ILogSink
     {
         public string ConnectionString { get; set; }
         public string CommandText { get; set;}
+        public CommandType CommandType { get; set; }
 
         public IList<DbLogSinkCommandParameter> Parameters { get; set; }
 

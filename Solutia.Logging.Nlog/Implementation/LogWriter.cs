@@ -48,7 +48,7 @@ namespace Solutia.Logging.Nlog.Implementation
                         Name = dbConfig.Name,
                         ConnectionString = dbConfig.ConnectionString,
                         CommandText = dbConfig.CommandText,
-                        CommandType = System.Data.CommandType.StoredProcedure
+                        CommandType = MapCommandType(dbConfig.CommandType)
                     };
 
                     //Map parameters. 
@@ -57,7 +57,7 @@ namespace Solutia.Logging.Nlog.Implementation
                     {
                         dbTarget.Parameters.Add(new DatabaseParameterInfo()
                         {
-                            Name = parameter.Name.StartsWith("@")?parameter.Name:"@" + parameter.Name,
+                            Name = parameter.Name.StartsWith("@")?parameter.Name:"@" + parameter.Name,              //!!!This assumes we're using SQL Server. Probably need to create a converter for other supported database types.
                             Layout = simpleParamLayoutBuilder.BuildSimpleLayout(parameter.LogEntryComponent)
                         });
                     }
@@ -97,7 +97,22 @@ namespace Solutia.Logging.Nlog.Implementation
             return this;
         }
 
-       
+       private System.Data.CommandType MapCommandType(CommandType commandType)
+        {
+            if(commandType == CommandType.StoredProcedure)
+            {
+                return System.Data.CommandType.StoredProcedure;
+            }
+            else if(commandType == CommandType.Table)
+            {
+                return System.Data.CommandType.Text;
+            }
+            else
+            {
+                throw new Exception("Unknown command type.");
+            }
+        }
+
         private LogLevel MapEventLevel(Solutia.Logging.Interfaces.EventLevel eventLevel)
         {
             switch(eventLevel)
