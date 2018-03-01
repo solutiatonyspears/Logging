@@ -1,4 +1,5 @@
 ﻿using Solutia.Logging.Interfaces;
+using System;
 
 namespace Logging.Classes
 {
@@ -12,5 +13,15 @@ namespace Logging.Classes
 
         public EventLevel EventLevel { get; private set; }
         public string Message {get; private set;}
+    }
+
+    public class ExceptionLogMessage:LogMessage
+    {
+        public ExceptionLogMessage(Exception ex, EventLevel eventLevel = EventLevel.Error):base(ex?.Message, eventLevel)
+        {
+            this.Exception = ex;
+        }
+
+        public Exception Exception { get; private set; }
     }
 }

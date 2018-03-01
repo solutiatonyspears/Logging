@@ -47,6 +47,7 @@ namespace UnitTests.SolutiaTests
                 ConnectionString = "Data Source=LAPTOP-6EA15661\\SQLEXPRESS;Initial Catalog=Logging;Integrated Security=True",
                 CommandText = "WriteLog",
                 Name = "TestLogger",
+                CommandType = CommandType.StoredProcedure,
                 Parameters = new List<DbLogSinkCommandParameter>()
                 {
                     new DbLogSinkCommandParameter()
@@ -78,6 +79,8 @@ namespace UnitTests.SolutiaTests
            ILogWriter writer = new LogWriter("d")
                .Configure(new List<ILogSink>() { fileSink, elSink, dbSink })
                .Log(new LogMessage("Hello from Solutia File Logger", EventLevel.Debug));
+
+            writer.Log(new ExceptionLogMessage(new NullReferenceException("This is an exceptional exception.")));
         }
 
 
@@ -103,6 +106,7 @@ namespace UnitTests.SolutiaTests
             .Log(new LogMessage("Hello from Solutia File Logger", EventLevel.Debug));
         }
 
+       
         [TestMethod]
         public void TestSolutiaLogToEventLogSucceeds()
         {

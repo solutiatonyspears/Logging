@@ -130,8 +130,15 @@ namespace Solutia.Logging.Nlog.Implementation
 
         public override ILogWriter Log(ILogMessage message)
         {
-            logger.Log(MapEventLevel(message.EventLevel), message.Message);
-
+            if (message is ExceptionLogMessage)
+            {
+                logger.Log(MapEventLevel(message.EventLevel), ((ExceptionLogMessage)message).Exception);
+            }
+            else
+            {
+                logger.Log(MapEventLevel(message.EventLevel), message.Message);
+            }
+            
             return this;
         }
     }

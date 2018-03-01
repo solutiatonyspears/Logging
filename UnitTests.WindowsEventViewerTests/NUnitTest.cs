@@ -127,7 +127,11 @@ namespace UnitTests.WindowsEventViewerTests
             logger.Log(LogLevel.Error, new Exception("Hi, I'm a table-logged exception"));
         }
     
+        [TestMethod]
+        public void TestNLogExceptionToDatabaseSucceeds()
+        {
 
+        }
         [TestMethod]
         public void TestNLogToDatabaseSucceeds()
         {
