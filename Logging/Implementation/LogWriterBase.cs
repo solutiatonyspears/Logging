@@ -9,7 +9,12 @@ namespace Logging.Implementation
 {
     public abstract class LogWriterBase : ILogWriter
     {
+        public EventHandler<ILogMessage> OnLogEntryCreated = delegate { };
         public abstract ILogWriter Configure(IEnumerable<ILogSink> configurations);
-        public abstract ILogWriter Log(ILogMessage message);
+        public virtual ILogWriter Log(ILogMessage message)
+        {
+            OnLogEntryCreated(this, message);
+            return this;
+        }
     }
 }

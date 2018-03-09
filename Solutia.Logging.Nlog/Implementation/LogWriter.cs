@@ -139,7 +139,7 @@ namespace Solutia.Logging.Nlog.Implementation
                 logger.Log(MapEventLevel(message.EventLevel), message.Message);
             }
             
-            return this;
+            return base.Log(message);
         }
     }
 }

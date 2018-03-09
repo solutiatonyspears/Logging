@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Logging</RootNamespace>
     <AssemblyName>Logging</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,7 +48,9 @@
     <Compile Include="Classes\EventLogSink.cs" />
     <Compile Include="Classes\FileLogSink.cs" />
     <Compile Include="Classes\LogMessage.cs" />
+    <Compile Include="Implementation\CachedLogWriter.cs" />
     <Compile Include="Implementation\LogWriterBase.cs" />
+    <Compile Include="Interfaces\ICachedLogWriter.cs" />
     <Compile Include="Interfaces\ILogWriter.cs" />
     <Compile Include="Interfaces\ILogMessage.cs" />
     <Compile Include="Interfaces\ILogSink.cs" />
