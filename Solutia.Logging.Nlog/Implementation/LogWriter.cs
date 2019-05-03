@@ -128,6 +128,18 @@ namespace Solutia.Logging.Nlog.Implementation
             }
         }
 
+        public static EventLevel MapLogLevel(string level)
+        {
+            if (level.Equals(LogLevel.Debug.ToString())) return EventLevel.Debug;
+            else if (level.Equals(LogLevel.Error.ToString())) return EventLevel.Error;
+            else if (level.Equals(LogLevel.Fatal.ToString())) return EventLevel.Fatal;
+            else if (level.Equals(LogLevel.Info.ToString())) return EventLevel.Information;
+            else if (level.Equals(LogLevel.Warn.ToString())) return EventLevel.Warning;
+            else if (level.Equals(LogLevel.Trace.ToString())) return EventLevel.Trace;
+            else if (level.Equals(LogLevel.Off.ToString())) return EventLevel.Off;
+            else throw new Exception("Unable to determine NLog logging level for Solutia logging level " + level);
+        }
+
         public override ILogWriter Log(ILogMessage message)
         {
             if (message is ExceptionLogMessage)

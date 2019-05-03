@@ -35,7 +35,8 @@ namespace Solutia.Logging.Nlog.Implementation
                 case LogEntryComponent.StackTrace: return "${stacktrace}";
                 case LogEntryComponent.Time: return "${time}";
                 case LogEntryComponent.UserName: return "${windows-identity}";
-                default: return "${..}";
+                case LogEntryComponent.ApplicationName: return "${processname}";
+                default: return "${literal}";
             }
         }
     }

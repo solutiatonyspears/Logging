@@ -3,6 +3,6 @@ C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Debug\Logging.p
 C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Debug\Newtonsoft.Json.dll
 C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Debug\Newtonsoft.Json.xml
 C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Debug\Solutia.Logging.csproj.CoreCompileInputs.cache
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Debug\Solutia.Logging.csproj.CopyComplete
 C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Debug\Logging.dll
 C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Debug\Logging.pdb
-C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Debug\Solutia.Logging.csprojResolveAssemblyReference.cache

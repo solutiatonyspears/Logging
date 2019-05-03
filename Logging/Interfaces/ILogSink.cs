@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Solutia.Logging.Interfaces
 {
     //Each log entry component represents one "field" in a log entry. Configure a log sink to take any combination of these components.
-    public enum LogEntryComponent { LogLevel, LoggerName, Message, Date, LongDate, MachineName, UserName, Time, StackTrace, LogId }
+    public enum LogEntryComponent { LogLevel, LoggerName, Message, Date, LongDate, MachineName, UserName, Time, StackTrace, LogId, ApplicationName }
 
     //Each log level represents the minimum log severity the sink will accept.
     public enum EventLevel { Always, Debug, Trace, Information, Warning, Error, Fatal, Off };

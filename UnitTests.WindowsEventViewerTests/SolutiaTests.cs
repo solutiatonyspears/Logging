@@ -8,6 +8,7 @@ using NLog.Config;
 using NLog.Targets;
 using Solutia.Logging.Interfaces;
 using Solutia.Logging.Nlog.Implementation;
+using UnitTests.WindowsEventViewerTests;
 
 namespace UnitTests.SolutiaTests
 {
@@ -22,7 +23,8 @@ namespace UnitTests.SolutiaTests
                     LogEntryComponent.Date,
                     LogEntryComponent.MachineName,
                     LogEntryComponent.Message,
-                    LogEntryComponent.LogLevel
+                    LogEntryComponent.LogLevel,
+                    LogEntryComponent.ApplicationName
                 };
 
             var fileSink = new FileLogSink()
@@ -72,6 +74,12 @@ namespace UnitTests.SolutiaTests
                     {
                         Name = "LogId",
                         LogEntryComponent = LogEntryComponent.LogId
+                    },
+
+                    new DbLogSinkCommandParameter()
+                    {
+                        Name = "ApplicationName",
+                        LogEntryComponent = LogEntryComponent.ApplicationName
                     }
                 }
             };
@@ -81,6 +89,8 @@ namespace UnitTests.SolutiaTests
                .Log(new LogMessage("Hello from Solutia File Logger", EventLevel.Debug));
 
             writer.Log(new ExceptionLogMessage(new NullReferenceException("This is an exceptional exception.")));
+
+            writer.Log(new ApplicationLogMessage("ThisApp", "This Message", EventLevel.Debug));
         }
 
 
@@ -143,11 +153,11 @@ namespace UnitTests.SolutiaTests
                                ,
                                     [Message]
                                ,
-                                    [Source], DateCreated)
+                                    [Source], DateCreated, ApplicationName)
                          VALUES
                                (@SeverityLevel
                                ,@Message
-                               ,@Source, GETDATE());",
+                               ,@Source, GETDATE(), @ApplicationName);",
 
                 CommandType = CommandType.Table,
                 Name = "TestLogger",
@@ -158,7 +168,7 @@ namespace UnitTests.SolutiaTests
                         Name = "SeverityLevel",
                         LogEntryComponent = LogEntryComponent.LogLevel
                     },
-                    
+
                     new DbLogSinkCommandParameter()
                     {
                         Name = "Message",
@@ -170,12 +180,19 @@ namespace UnitTests.SolutiaTests
                         Name = "Source",
                         LogEntryComponent = LogEntryComponent.MachineName
                     },
+
+                    new DbLogSinkCommandParameter()
+                    {
+                        Name= "ApplicationName",
+                        LogEntryComponent = LogEntryComponent.ApplicationName
+                    }
                 }
             };
 
             new Solutia.Logging.Nlog.Implementation.LogWriter("d")
                 .Configure(new List<DatabaseLogSink>() { dbSink })
-                .Log(new LogMessage("Hello from Solutia Database Table Logger", EventLevel.Debug));
+                .Log(new LogMessage("Hello from Solutia Database Table Logger", EventLevel.Debug))
+                .Log(new ApplicationLogMessage("ThisApp", "This Message", EventLevel.Debug));
         }
 
         [TestMethod]

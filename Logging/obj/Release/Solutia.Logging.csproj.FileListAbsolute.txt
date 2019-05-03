@@ -1,0 +1,8 @@
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Release\Logging.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Release\Logging.pdb
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Release\Newtonsoft.Json.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\bin\Release\Newtonsoft.Json.xml
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Release\Solutia.Logging.csproj.CoreCompileInputs.cache
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Release\Solutia.Logging.csproj.CopyComplete
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Release\Logging.dll
+C:\Users\gzann\Documents\Development\Solutia\Logging\Logging\obj\Release\Logging.pdb
